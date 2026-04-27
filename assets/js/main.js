@@ -5,6 +5,7 @@ const menuToggle = document.querySelector("#menuToggle");
 const mobileMenu = document.querySelector("#mobileMenu");
 const typedTagline = document.querySelector("#typedTagline");
 const neuralCanvas = document.querySelector("#neuralCanvas");
+const counters = document.querySelectorAll(".counter");
 
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
@@ -130,4 +131,55 @@ if (neuralCanvas) {
       }
     });
   }
+}
+
+if (counters.length > 0) {
+  const formatCount = (value, formatType) => {
+    if (formatType === "compact") {
+      if (value >= 1000000) {
+        return `${(value / 1000000).toFixed(1).replace(".0", "")}M`;
+      }
+      if (value >= 1000) {
+        return `${(value / 1000).toFixed(1).replace(".0", "")}K`;
+      }
+    }
+    if (formatType === "comma") {
+      return value.toLocaleString();
+    }
+    return String(value);
+  };
+
+  const animateCounter = (counter) => {
+    const target = Number(counter.getAttribute("data-target") || "0");
+    const suffix = counter.getAttribute("data-suffix") || "";
+    const formatType = counter.getAttribute("data-format") || "plain";
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const step = (currentTime) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const eased = 1 - (1 - progress) ** 3;
+      const currentValue = Math.round(target * eased);
+      counter.textContent = `${formatCount(currentValue, formatType)}${suffix}`;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.45 }
+  );
+
+  counters.forEach((counter) => observer.observe(counter));
 }
