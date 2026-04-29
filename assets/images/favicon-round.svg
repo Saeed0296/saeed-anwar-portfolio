@@ -1,16 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <defs>
-    <clipPath id="circleClip">
-      <circle cx="64" cy="64" r="64" />
-    </clipPath>
+    <pattern id="avatarPattern" patternUnits="userSpaceOnUse" width="128" height="128">
+      <image
+        href="logo_img.jpg.jpeg"
+        x="0"
+        y="0"
+        width="128"
+        height="128"
+        preserveAspectRatio="xMidYMid slice"
+      />
+    </pattern>
   </defs>
-  <image
-    href="logo_img.jpg.jpeg"
-    x="0"
-    y="0"
-    width="128"
-    height="128"
-    preserveAspectRatio="xMidYMid slice"
-    clip-path="url(#circleClip)"
-  />
+  <circle cx="64" cy="64" r="64" fill="url(#avatarPattern)" />
 </svg>
