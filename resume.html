@@ -119,8 +119,8 @@
     </header>
     <main class="resume-shell">
       <section class="section-wrap">
-        <div class="container resume-wrap reveal">
-          <div class="reveal-stagger">
+        <div class="container resume-wrap">
+          <div>
             <p class="eyebrow">Resume</p>
             <h1>Saeed Anwar - Professional Resume</h1>
             <div class="resume-actions">
@@ -131,7 +131,7 @@
             </div>
           </div>
 
-          <div class="reveal-stagger resume-viewer-shell">
+          <div class="resume-viewer-shell">
             <iframe
               class="pdf-viewer"
               src="assets/docs/Saeed Anwar.pdf#view=FitH"
@@ -156,5 +156,16 @@
       </section>
     </main>
     <script src="assets/js/main.js"></script>
+    <script>
+      (function () {
+        const isMobileViewport = window.matchMedia("(max-width: 900px)").matches;
+        const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+        const hasNoRedirectFlag = window.location.search.includes("noRedirect=1");
+
+        if ((isMobileViewport || isTouchDevice) && !hasNoRedirectFlag) {
+          window.location.replace("assets/docs/Saeed Anwar.pdf");
+        }
+      })();
+    </script>
   </body>
 </html>
