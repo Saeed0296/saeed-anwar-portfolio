@@ -23,6 +23,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/jpeg" href="assets/images/logo_img.jpg.jpeg" />
+    <link rel="apple-touch-icon" href="assets/images/logo_img.jpg.jpeg" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -31,7 +33,17 @@
 
     <header class="site-header">
       <div class="container flex items-center justify-between">
-        <a class="brand" href="#home" aria-label="Saeed Anwar Home">Saeed Anwar</a>
+        <a class="brand" href="#home" aria-label="Saeed Anwar Home">
+          <span class="brand-avatar-wrap">
+            <img
+              src="assets/images/logo_img.jpg.jpeg"
+              alt="Saeed Anwar portrait"
+              class="brand-avatar"
+              loading="lazy"
+            />
+          </span>
+          <span class="brand-name">Saeed Anwar</span>
+        </a>
         <nav class="site-nav" aria-label="Primary Navigation">
           <a href="#home">Home</a>
           <a href="#about">About</a>
@@ -39,6 +51,7 @@
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#achievements">Achievements</a>
+          <a href="resume.html" data-page-link>Resume</a>
           <a href="#contact">Contact</a>
         </nav>
         <button
@@ -59,6 +72,7 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#achievements">Achievements</a>
+        <a href="resume.html" data-page-link>Resume</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -481,7 +495,7 @@
               <a href="mailto:hello@saeedanwar.dev">Email</a>
               <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
               <a href="https://github.com/Saeed0296" target="_blank" rel="noopener">GitHub</a>
-              <a href="Saeed Anwar Resume 1.pdf" target="_blank" rel="noopener">Resume</a>
+              <a href="resume.html">Resume</a>
             </div>
           </div>
         </div>

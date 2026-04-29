@@ -13,6 +13,9 @@ const tiltCards = document.querySelectorAll(".tilt-card");
 const contactForm = document.querySelector("#contactForm");
 const formSuccess = document.querySelector("#formSuccess");
 const cursorGlow = document.querySelector("#cursorGlow");
+const pageLinks = document.querySelectorAll("a[data-page-link]");
+
+document.body.classList.add("page-enter");
 
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
@@ -251,5 +254,22 @@ if (contactForm && formSuccess) {
     formSuccess.classList.add("is-visible");
     contactForm.reset();
     window.setTimeout(() => formSuccess.classList.remove("is-visible"), 2800);
+  });
+}
+
+if (pageLinks.length > 0) {
+  pageLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#")) return;
+      if (link.target === "_blank" || link.hasAttribute("download")) return;
+      const targetUrl = new URL(href, window.location.href);
+      if (targetUrl.origin !== window.location.origin) return;
+      event.preventDefault();
+      document.body.classList.add("page-leave");
+      window.setTimeout(() => {
+        window.location.href = targetUrl.href;
+      }, 220);
+    });
   });
 }
