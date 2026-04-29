@@ -3,12 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saeed Anwar | AI/ML Lead Portfolio</title>
     <meta
       name="description"
-      content="Saeed Anwar - AI/ML Engineer portfolio featuring selected projects, impact, and technical expertise."
+      content="Saeed Anwar - AI/ML Lead building production OCR, Computer Vision, and LLM systems at enterprise scale."
     />
+    <meta property="og:title" content="Saeed Anwar | AI/ML Lead Portfolio" />
+    <meta
+      property="og:description"
+      content="Production-grade AI systems, high-impact projects, and end-to-end leadership in OCR, CV, and LLM pipelines."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/Saeed0296/saeed-anwar-portfolio" />
     <meta name="theme-color" content="#0B0F14" />
-    <title>Saeed Anwar | AI/ML Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,6 +26,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
     <div class="bg-noise" aria-hidden="true"></div>
 
     <header class="site-header">
@@ -30,6 +38,7 @@
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
+          <a href="#achievements">Achievements</a>
           <a href="#contact">Contact</a>
         </nav>
         <button
@@ -49,12 +58,13 @@
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main id="home">
-      <section class="section-wrap hero full-hero">
+      <section class="section-wrap hero full-hero section-transition">
         <div class="container hero-grid">
           <div class="hero-content">
             <p class="eyebrow hero-reveal">AI/ML Leadership Portfolio</p>
@@ -92,14 +102,14 @@
         </div>
       </section>
 
-      <section id="about" class="section-wrap">
-        <div class="container">
-          <div class="section-heading">
+      <section id="about" class="section-wrap section-transition">
+        <div class="container reveal">
+          <div class="section-heading reveal-stagger">
             <p class="eyebrow">About</p>
             <h2>Credibility built through measurable AI delivery.</h2>
           </div>
           <div class="grid cols-2 gap-lg about-layout">
-            <article class="card glass-card about-story">
+            <article class="card glass-card about-story reveal-stagger">
               <h3>AI/ML leadership with execution depth</h3>
               <p>
                 I am an AI/ML Lead focused on architecting and shipping production AI systems
@@ -116,7 +126,7 @@
                 measurable business impact.
               </p>
             </article>
-            <div class="about-stats-grid">
+            <div class="about-stats-grid reveal-stagger">
               <article class="card glass-card stat-card">
                 <p class="stat-label">Documents / Day</p>
                 <p class="stat-value">
@@ -152,35 +162,160 @@
         </div>
       </section>
 
-      <section id="projects" class="section-wrap">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Selected Work</p>
-            <h2>Case-study-ready project foundation.</h2>
+      <section id="experience" class="section-wrap section-transition">
+        <div class="container reveal">
+          <div class="section-heading reveal-stagger">
+            <p class="eyebrow">Experience Timeline</p>
+            <h2>Progressive leadership across AI delivery maturity.</h2>
           </div>
-          <div class="grid cols-3 gap-md">
-            <article class="card glass-card">
-              <h3>Predictive Intelligence</h3>
-              <p>Forecasting systems for data-driven strategic planning.</p>
-              <a class="text-link" href="#contact">Request Case Study</a>
+          <div class="timeline">
+            <article class="timeline-item reveal-stagger">
+              <div class="timeline-dot"></div>
+              <div class="card glass-card timeline-card">
+                <p class="timeline-meta">Current Role</p>
+                <h3>Team Lead (ML1)</h3>
+                <p class="timeline-company">Confidential Enterprise AI Program · 2024 - Present</p>
+                <ul>
+                  <li>Led multi-disciplinary AI squads for enterprise document intelligence delivery.</li>
+                  <li>Scaled production OCR and LLM pipelines to millions of daily transactions.</li>
+                  <li>Owned CI/CD governance across model and service releases with reliability gates.</li>
+                  <li>Drove model optimization strategy balancing throughput, accuracy, and cost.</li>
+                </ul>
+              </div>
             </article>
-            <article class="card glass-card">
-              <h3>Computer Vision Ops</h3>
-              <p>Vision pipelines integrated into operational workflows.</p>
-              <a class="text-link" href="#contact">Request Case Study</a>
+            <article class="timeline-item reveal-stagger">
+              <div class="timeline-dot"></div>
+              <div class="card glass-card timeline-card">
+                <p class="timeline-meta">Growth Stage</p>
+                <h3>Senior Data Scientist</h3>
+                <p class="timeline-company">AI Platform Team · 2022 - 2024</p>
+                <ul>
+                  <li>Architected production-grade CV and NLP systems for mission-critical workflows.</li>
+                  <li>Institutionalized monitoring and retraining loops for sustained model quality.</li>
+                  <li>Mentored engineers and data scientists on deployment-first ML practices.</li>
+                </ul>
+              </div>
             </article>
-            <article class="card glass-card">
-              <h3>NLP Automation</h3>
-              <p>Language models tailored for process automation and insights.</p>
-              <a class="text-link" href="#contact">Request Case Study</a>
+            <article class="timeline-item reveal-stagger">
+              <div class="timeline-dot"></div>
+              <div class="card glass-card timeline-card">
+                <p class="timeline-meta">Core Delivery</p>
+                <h3>Data Scientist</h3>
+                <p class="timeline-company">Analytics & Automation Unit · 2021 - 2022</p>
+                <ul>
+                  <li>Built document extraction and classification models for diverse data sources.</li>
+                  <li>Productionized pipelines with reproducible experiment and deployment workflows.</li>
+                  <li>Improved model precision/recall through targeted architecture and data iteration.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="timeline-item reveal-stagger">
+              <div class="timeline-dot"></div>
+              <div class="card glass-card timeline-card">
+                <p class="timeline-meta">Foundation</p>
+                <h3>Associate Software Engineer</h3>
+                <p class="timeline-company">Product Engineering Team · 2020 - 2021</p>
+                <ul>
+                  <li>Delivered backend services and integration layers for data-centric products.</li>
+                  <li>Contributed to CI/CD pipelines and quality controls for production deployments.</li>
+                  <li>Collaborated across product and engineering to improve delivery speed.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="timeline-item reveal-stagger">
+              <div class="timeline-dot"></div>
+              <div class="card glass-card timeline-card">
+                <p class="timeline-meta">Early Career</p>
+                <h3>Internship</h3>
+                <p class="timeline-company">Software & Data Internship · 2019 - 2020</p>
+                <ul>
+                  <li>Supported data preparation and feature engineering for analytical workloads.</li>
+                  <li>Learned production engineering fundamentals and collaborative development.</li>
+                  <li>Built strong base in experimentation and iterative technical problem solving.</li>
+                </ul>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="skills" class="section-wrap">
-        <div class="container">
-          <div class="section-heading">
+      <section id="projects" class="section-wrap section-transition">
+        <div class="container reveal">
+          <div class="section-heading reveal-stagger">
+            <p class="eyebrow">Project Gallery</p>
+            <h2>Product-grade AI solutions mapped to real categories.</h2>
+          </div>
+          <div class="project-filters reveal-stagger">
+            <button class="btn btn-ghost is-active" data-filter="all">All</button>
+            <button class="btn btn-ghost" data-filter="Document Intelligence">Document Intelligence</button>
+            <button class="btn btn-ghost" data-filter="Computer Vision">Computer Vision</button>
+            <button class="btn btn-ghost" data-filter="LLM / RAG">LLM / RAG</button>
+            <button class="btn btn-ghost" data-filter="Fraud Detection">Fraud Detection</button>
+          </div>
+          <div class="projects-grid">
+            <article class="card glass-card project-card reveal-stagger tilt-card" data-category="Document Intelligence">
+              <span class="badge">Document Intelligence</span>
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80"
+                alt="Document processing visualization"
+              />
+              <h3>Enterprise OCR Orchestrator</h3>
+              <p>High-throughput extraction pipeline handling multilingual documents at scale.</p>
+              <p class="stack">OCR · FastAPI · Docker · Azure</p>
+              <a class="text-link" href="https://github.com/Saeed0296" target="_blank" rel="noopener"
+                >View on GitHub</a
+              >
+            </article>
+            <article class="card glass-card project-card reveal-stagger tilt-card" data-category="Computer Vision">
+              <span class="badge">Computer Vision</span>
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1200&q=80"
+                alt="Computer vision board"
+              />
+              <h3>Visual Defect Intelligence</h3>
+              <p>Model suite using YOLO and ViT for real-time defect localization and triage.</p>
+              <p class="stack">YOLO · ViT · Python · GCP</p>
+              <a class="text-link" href="https://github.com/Saeed0296" target="_blank" rel="noopener"
+                >View on GitHub</a
+              >
+            </article>
+            <article class="card glass-card project-card reveal-stagger tilt-card" data-category="LLM / RAG">
+              <span class="badge">LLM / RAG</span>
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80"
+                alt="Generative AI interface"
+              />
+              <h3>Knowledge Copilot for Ops</h3>
+              <p>RAG-powered assistant built on Llama 3 and Mistral for grounded decisions.</p>
+              <p class="stack">Llama 3 · Mistral · RAG · SQL</p>
+              <a class="text-link" href="https://github.com/Saeed0296" target="_blank" rel="noopener"
+                >View on GitHub</a
+              >
+            </article>
+            <article class="card glass-card project-card reveal-stagger tilt-card" data-category="Fraud Detection">
+              <span class="badge">Fraud Detection</span>
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80"
+                alt="Fraud analytics interface"
+              />
+              <h3>Anomaly Risk Scoring Engine</h3>
+              <p>Fraud detection pipeline combining graph and behavioral features for fast alerts.</p>
+              <p class="stack">Python · SQL · CI/CD · FastAPI</p>
+              <a class="text-link" href="https://github.com/Saeed0296" target="_blank" rel="noopener"
+                >View on GitHub</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section-wrap section-transition">
+        <div class="container reveal">
+          <div class="section-heading reveal-stagger">
             <p class="eyebrow">Advanced Skills</p>
             <h2>Capabilities engineered for production AI scale.</h2>
           </div>
@@ -279,57 +414,75 @@
         </div>
       </section>
 
-      <section id="experience" class="section-wrap">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Portfolio Assets</p>
-            <h2>Professional documents and strategic portfolio plan.</h2>
+      <section id="achievements" class="section-wrap section-transition">
+        <div class="container reveal">
+          <div class="section-heading reveal-stagger">
+            <p class="eyebrow">Achievements</p>
+            <h2>Research depth and continuous learning credentials.</h2>
           </div>
           <div class="grid cols-2 gap-md">
-            <article class="card glass-card">
-              <h3>Resume</h3>
-              <p>Concise profile of experience, technical depth, and impact narrative.</p>
-              <a class="btn btn-ghost" href="Saeed Anwar Resume 1.pdf" target="_blank" rel="noopener"
-                >Open Resume</a
-              >
+            <article class="card glass-card journal-card reveal-stagger">
+              <p class="badge badge-accent">Publication</p>
+              <h3>Classification of Cloud Attacks using Deep Learning</h3>
+              <p>
+                Publication-oriented work focused on applying deep learning strategies to improve
+                attack detection and cloud security classification performance.
+              </p>
+              <details>
+                <summary>View details</summary>
+                <p>
+                  Emphasizes practical model design, evaluation rigor, and applicability to
+                  security operations where precision and response speed matter.
+                </p>
+              </details>
             </article>
-            <article class="card glass-card">
-              <h3>Profile</h3>
-              <p>Expanded professional profile for client conversations and hiring review.</p>
-              <a class="btn btn-ghost" href="Profile.pdf" target="_blank" rel="noopener"
-                >Open Profile</a
-              >
-            </article>
-            <article class="card glass-card">
-              <h3>Market Analysis</h3>
-              <p>Positioning analysis: IT giants vs freelance AI/ML developer landscape.</p>
-              <a
-                class="btn btn-ghost"
-                href="Portfolio Analysis_ IT Giants vs Freelance AI_ML Developers.docx"
-                target="_blank"
-                rel="noopener"
-                >Open Analysis</a
-              >
-            </article>
-            <article class="card glass-card">
-              <h3>10-Phase Portfolio Plan</h3>
-              <p>Execution roadmap to scale this portfolio into a premium personal brand.</p>
-              <a class="btn btn-ghost" href="saeed_portfolio_10phase_plan.html" target="_blank" rel="noopener"
-                >Open Plan</a
-              >
+            <article class="card glass-card reveal-stagger">
+              <p class="badge badge-accent">Certifications</p>
+              <h3>Professional Credentials</h3>
+              <div class="cert-badges">
+                <span>AI Course</span>
+                <span>Python Certification</span>
+                <span>MySQL Certification</span>
+                <span>Rails Internship</span>
+              </div>
+              <details>
+                <summary>Expand credentials</summary>
+                <p>Applied learning credentials supporting software engineering and AI delivery.</p>
+              </details>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="section-wrap">
-        <div class="container">
-          <div class="card glass-card contact-strip flex items-center justify-between">
+      <section id="contact" class="section-wrap section-transition">
+        <div class="container reveal">
+          <div class="card glass-card contact-shell">
             <div>
               <p class="eyebrow">Contact</p>
-              <h2>Ready to build your next intelligent product?</h2>
+              <h2>Let's build intelligent systems together.</h2>
             </div>
-            <a class="btn btn-primary" href="mailto:hello@saeedanwar.dev">Email Saeed</a>
+            <form id="contactForm" class="contact-form">
+              <div class="input-group">
+                <input id="name" name="name" type="text" placeholder=" " required />
+                <label for="name">Name</label>
+              </div>
+              <div class="input-group">
+                <input id="email" name="email" type="email" placeholder=" " required />
+                <label for="email">Email</label>
+              </div>
+              <div class="input-group">
+                <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+                <label for="message">Message</label>
+              </div>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+              <p class="form-success" id="formSuccess" aria-live="polite">Message sent successfully.</p>
+            </form>
+            <div class="contact-links">
+              <a href="mailto:hello@saeedanwar.dev">Email</a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/Saeed0296" target="_blank" rel="noopener">GitHub</a>
+              <a href="Saeed Anwar Resume 1.pdf" target="_blank" rel="noopener">Resume</a>
+            </div>
           </div>
         </div>
       </section>

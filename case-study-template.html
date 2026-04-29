@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study Template | Saeed Anwar</title>
+    <meta
+      name="description"
+      content="Reusable AI project case study template for documenting problem, approach, architecture, and measurable results."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .case-study-layout {
+        display: grid;
+        grid-template-columns: 0.8fr 1.4fr;
+        gap: 1.5rem;
+        align-items: start;
+      }
+      .case-sidebar {
+        position: sticky;
+        top: 6rem;
+      }
+      .case-nav {
+        display: grid;
+        gap: 0.45rem;
+      }
+      .case-nav a {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 0.6rem;
+        padding: 0.45rem 0.6rem;
+        color: #d2dce9;
+      }
+      .case-content {
+        display: grid;
+        gap: 1rem;
+      }
+      .case-content .card ul {
+        margin-left: 1rem;
+        list-style: disc;
+      }
+      @media (width <= 960px) {
+        .case-study-layout {
+          grid-template-columns: 1fr;
+        }
+        .case-sidebar {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="section-wrap">
+      <div class="container case-study-layout">
+        <aside class="card glass-card case-sidebar">
+          <p class="eyebrow">Case Study</p>
+          <h2>Project Navigation</h2>
+          <nav class="case-nav">
+            <a href="#hero">Hero</a>
+            <a href="#problem">Problem</a>
+            <a href="#approach">Approach</a>
+            <a href="#stack">Tech Stack</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#results">Results</a>
+            <a href="#visuals">Visuals</a>
+            <a href="#github">GitHub</a>
+          </nav>
+        </aside>
+
+        <div class="case-content">
+          <section id="hero" class="card glass-card">
+            <p class="eyebrow">Project Title</p>
+            <h1>Project Name Placeholder</h1>
+            <p>Concise one-line summary of what the project solves and why it matters.</p>
+          </section>
+
+          <section id="problem" class="card glass-card">
+            <h3>Problem</h3>
+            <p>Describe the business and technical challenge with clear constraints.</p>
+          </section>
+
+          <section id="approach" class="card glass-card">
+            <h3>Approach</h3>
+            <p>Outline the strategy used to solve the problem and key decisions.</p>
+          </section>
+
+          <section id="stack" class="card glass-card">
+            <h3>Tech Stack</h3>
+            <p>Python, FastAPI, Docker, Azure, SQL, LLMs, OCR, Computer Vision.</p>
+          </section>
+
+          <section id="architecture" class="card glass-card">
+            <h3>Architecture</h3>
+            <ul>
+              <li>Data ingestion and preprocessing flow</li>
+              <li>Model pipeline and inference architecture</li>
+              <li>Serving, monitoring, and CI/CD lifecycle</li>
+            </ul>
+          </section>
+
+          <section id="results" class="card glass-card">
+            <h3>Results</h3>
+            <ul>
+              <li>Quantified throughput and quality improvements</li>
+              <li>Latency/cost optimization metrics</li>
+              <li>Operational impact and adoption outcomes</li>
+            </ul>
+          </section>
+
+          <section id="visuals" class="card glass-card">
+            <h3>Visuals</h3>
+            <p>Add architecture diagrams, workflow captures, and dashboard snapshots here.</p>
+          </section>
+
+          <section id="github" class="card glass-card">
+            <h3>GitHub Link</h3>
+            <a class="btn btn-primary" href="https://github.com/Saeed0296" target="_blank" rel="noopener"
+              >Open Repository</a
+            >
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

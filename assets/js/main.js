@@ -6,6 +6,13 @@ const mobileMenu = document.querySelector("#mobileMenu");
 const typedTagline = document.querySelector("#typedTagline");
 const neuralCanvas = document.querySelector("#neuralCanvas");
 const counters = document.querySelectorAll(".counter");
+const revealBlocks = document.querySelectorAll(".reveal");
+const filterButtons = document.querySelectorAll("[data-filter]");
+const projectCards = document.querySelectorAll(".project-card");
+const tiltCards = document.querySelectorAll(".tilt-card");
+const contactForm = document.querySelector("#contactForm");
+const formSuccess = document.querySelector("#formSuccess");
+const cursorGlow = document.querySelector("#cursorGlow");
 
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
@@ -25,6 +32,14 @@ if (menuToggle && mobileMenu) {
       menuToggle.classList.remove("is-open");
       mobileMenu.classList.remove("is-open");
     });
+  });
+}
+
+if (cursorGlow && window.matchMedia("(pointer: fine)").matches) {
+  window.addEventListener("pointermove", (event) => {
+    cursorGlow.style.opacity = "1";
+    cursorGlow.style.left = `${event.clientX}px`;
+    cursorGlow.style.top = `${event.clientY}px`;
   });
 }
 
@@ -182,4 +197,59 @@ if (counters.length > 0) {
   );
 
   counters.forEach((counter) => observer.observe(counter));
+}
+
+if (revealBlocks.length > 0) {
+  const revealObserver = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 }
+  );
+  revealBlocks.forEach((block) => revealObserver.observe(block));
+}
+
+if (filterButtons.length > 0 && projectCards.length > 0) {
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.getAttribute("data-filter") || "all";
+      filterButtons.forEach((btn) => btn.classList.remove("is-active"));
+      button.classList.add("is-active");
+      projectCards.forEach((card) => {
+        const category = card.getAttribute("data-category");
+        const shouldShow = filter === "all" || filter === category;
+        card.classList.toggle("is-hidden", !shouldShow);
+      });
+    });
+  });
+}
+
+if (tiltCards.length > 0 && window.matchMedia("(pointer: fine)").matches) {
+  tiltCards.forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const rotateY = ((x / rect.width) * 2 - 1) * 5;
+      const rotateX = ((y / rect.height) * -2 + 1) * 5;
+      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+    });
+    card.addEventListener("pointerleave", () => {
+      card.style.transform = "";
+    });
+  });
+}
+
+if (contactForm && formSuccess) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    formSuccess.classList.add("is-visible");
+    contactForm.reset();
+    window.setTimeout(() => formSuccess.classList.remove("is-visible"), 2800);
+  });
 }
