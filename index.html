@@ -100,7 +100,7 @@
 
       <div class="home-content">
         <div class="container">
-          <div class="intro-hero-grid full-hero">
+          <div class="intro-hero-grid full-hero home-hero">
             <div class="hero-content intro-copy">
               <p class="eyebrow hero-reveal">AI/ML Leadership Portfolio</p>
               <h1 class="hero-reveal">Saeed Anwar</h1>
@@ -123,30 +123,40 @@
                 <i></i>
               </a>
             </div>
-            <div class="intro-visual-column">
-              <figure class="hero-profile-frame hero-reveal" id="heroProfileFrame" data-hero-profile>
-                <span class="hero-profile-frame__shine" aria-hidden="true"></span>
-                <span class="hero-profile-frame__halo" aria-hidden="true"></span>
-                <img
-                  class="hero-profile-frame__img"
-                  src="assets/images/profile_pic.jpeg"
-                  alt="Saeed Anwar"
-                  width="640"
-                  height="640"
-                  loading="eager"
-                  decoding="async"
-                />
-              </figure>
-              <aside class="card glass-card intro-neural-card hero-reveal" aria-label="Live metrics snapshot">
+            <aside class="hero-showcase card glass-card hero-reveal" aria-label="Profile and live signal">
+              <div class="hero-showcase__portrait">
+                <figure class="hero-profile-frame" id="heroProfileFrame" data-hero-profile>
+                  <span class="hero-profile-frame__shine" aria-hidden="true"></span>
+                  <span class="hero-profile-frame__halo" aria-hidden="true"></span>
+                  <img
+                    class="hero-profile-frame__img"
+                    src="assets/images/profile_pic.jpeg"
+                    alt="Saeed Anwar"
+                    width="640"
+                    height="640"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </figure>
+              </div>
+              <div class="hero-showcase__viz">
                 <canvas id="neuralCanvas" aria-label="Animated neural network visual"></canvas>
-                <ul class="stats-list intro-stats-compact">
-                  <li><span>Throughput</span><strong>1M+ docs/day</strong></li>
-                  <li><span>Coverage</span><strong>2,000+ types</strong></li>
-                  <li><span>Accuracy</span><strong>99%+</strong></li>
-                  <li><span>Teams</span><strong>12–20</strong></li>
-                </ul>
-              </aside>
-            </div>
+              </div>
+              <ul class="hero-showcase__metrics">
+                <li>
+                  <span>Throughput</span><strong>1M+ docs/day</strong>
+                </li>
+                <li>
+                  <span>Coverage</span><strong>2,000+ types</strong>
+                </li>
+                <li>
+                  <span>Accuracy</span><strong>99%+</strong>
+                </li>
+                <li>
+                  <span>Teams</span><strong>12–20</strong>
+                </li>
+              </ul>
+            </aside>
           </div>
 
           <div id="about" class="intro-about-block reveal">
