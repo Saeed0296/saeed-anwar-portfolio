@@ -79,99 +79,123 @@
     </header>
 
     <main id="home">
-      <section class="section-wrap hero full-hero section-transition">
-        <div class="container hero-grid">
-          <div class="hero-content">
-            <p class="eyebrow hero-reveal">AI/ML Leadership Portfolio</p>
-            <h1 class="hero-reveal">Saeed Anwar</h1>
-            <h2 class="hero-title hero-reveal">
-              AI/ML Lead | Generative AI Engineer | Computer Vision Specialist
-            </h2>
-            <p class="lead hero-reveal">
-              <span id="typedTagline" data-text="Architecting production-grade AI systems at scale."></span>
-            </p>
-            <p class="hero-subtext hero-reveal">
-              Delivering intelligent document platforms processing
-              <strong>1M+ documents daily</strong> across <strong>2,000+ document types</strong>,
-              sustaining <strong>99%+ extraction accuracy</strong>, and leading cross-functional teams
-              of <strong>12-20 engineers</strong>.
-            </p>
-            <div class="actions hero-reveal">
-              <a class="btn btn-primary" href="#projects">View Projects</a>
-              <a class="btn btn-secondary" href="#contact">Contact Me</a>
-            </div>
-            <a class="scroll-indicator hero-reveal" href="#about" aria-label="Scroll to About section">
-              <span>Scroll</span>
-              <i></i>
-            </a>
-          </div>
-          <aside class="card glass-card hero-visual">
-            <canvas id="neuralCanvas" aria-label="Animated neural network visual"></canvas>
-            <ul class="stats-list">
-              <li><span>Daily Throughput</span><strong>1M+ docs/day</strong></li>
-              <li><span>Coverage</span><strong>2,000+ document types</strong></li>
-              <li><span>Model Reliability</span><strong>99%+ extraction accuracy</strong></li>
-              <li><span>Leadership</span><strong>12-20 engineers</strong></li>
-            </ul>
-          </aside>
-        </div>
-      </section>
+      <a
+        href="#contact"
+        class="profile-fab"
+        id="profileFab"
+        aria-label="Contact Saeed Anwar — scroll to contact form"
+      >
+        <span class="profile-fab__ring" aria-hidden="true"></span>
+        <img
+          class="profile-fab__img"
+          src="assets/images/profile_pic.jpeg"
+          alt=""
+          width="72"
+          height="72"
+          decoding="async"
+        />
+        <span class="profile-fab__pulse" aria-hidden="true"></span>
+        <span class="profile-fab__label">Contact</span>
+      </a>
 
-      <section id="about" class="section-wrap section-transition">
-        <div class="container reveal">
-          <div class="section-heading reveal-stagger">
-            <p class="eyebrow">About</p>
-            <h2>Credibility built through measurable AI delivery.</h2>
+      <section class="section-wrap intro-merged section-transition" data-intro-merged>
+        <div class="container">
+          <div class="intro-hero-grid full-hero">
+            <div class="hero-content intro-copy">
+              <p class="eyebrow hero-reveal">AI/ML Leadership Portfolio</p>
+              <h1 class="hero-reveal">Saeed Anwar</h1>
+              <h2 class="hero-title hero-reveal">
+                AI/ML Lead | Generative AI Engineer | Computer Vision Specialist
+              </h2>
+              <p class="lead hero-reveal">
+                <span id="typedTagline" data-text="Architecting production-grade AI systems at scale."></span>
+              </p>
+              <p class="hero-reveal intro-hook">
+                Production OCR, computer vision, and LLM pipelines at enterprise scale — from architecture
+                to CI/CD, with leadership that stays hands-on where it matters.
+              </p>
+              <div class="actions hero-reveal">
+                <a class="btn btn-primary" href="#projects">View Projects</a>
+                <a class="btn btn-secondary" href="#contact">Contact Me</a>
+              </div>
+              <a class="scroll-indicator hero-reveal" href="#about" aria-label="Scroll to impact metrics and story">
+                <span>Scroll</span>
+                <i></i>
+              </a>
+            </div>
+            <div class="intro-visual-column">
+              <figure class="hero-profile-frame hero-reveal" id="heroProfileFrame" data-hero-profile>
+                <span class="hero-profile-frame__shine" aria-hidden="true"></span>
+                <span class="hero-profile-frame__halo" aria-hidden="true"></span>
+                <img
+                  class="hero-profile-frame__img"
+                  src="assets/images/profile_pic.jpeg"
+                  alt="Saeed Anwar"
+                  width="640"
+                  height="640"
+                  loading="eager"
+                  decoding="async"
+                />
+              </figure>
+              <aside class="card glass-card intro-neural-card hero-reveal" aria-label="Live metrics snapshot">
+                <canvas id="neuralCanvas" aria-label="Animated neural network visual"></canvas>
+                <ul class="stats-list intro-stats-compact">
+                  <li><span>Throughput</span><strong>1M+ docs/day</strong></li>
+                  <li><span>Coverage</span><strong>2,000+ types</strong></li>
+                  <li><span>Accuracy</span><strong>99%+</strong></li>
+                  <li><span>Teams</span><strong>12–20</strong></li>
+                </ul>
+              </aside>
+            </div>
           </div>
-          <div class="grid cols-2 gap-lg about-layout">
-            <article class="card glass-card about-story reveal-stagger">
-              <h3>AI/ML leadership with execution depth</h3>
-              <p>
-                I am an AI/ML Lead focused on architecting and shipping production AI systems
-                that solve real operational problems, not just proof-of-concept demos.
-              </p>
-              <p>
-                My core strength is building high-performance OCR, Computer Vision, and LLM
-                pipelines that remain robust under enterprise throughput, quality, and latency
-                constraints.
-              </p>
-              <p>
-                I balance strategic leadership with hands-on engineering, guiding teams while
-                staying close to architecture, quality controls, and deployment rigor to deliver
-                measurable business impact.
-              </p>
-            </article>
-            <div class="about-stats-grid reveal-stagger">
-              <article class="card glass-card stat-card">
-                <p class="stat-label">Documents / Day</p>
-                <p class="stat-value">
-                  <span class="counter" data-target="1000000" data-format="compact" data-suffix="+"
-                    >0</span
-                  >
+
+          <div id="about" class="intro-about-block reveal">
+            <div class="section-heading reveal-stagger">
+              <p class="eyebrow">About &amp; impact</p>
+              <h2>Measurable delivery in document AI, vision, and generative systems.</h2>
+            </div>
+            <div class="grid cols-2 gap-lg about-layout">
+              <article class="card glass-card about-story reveal-stagger">
+                <h3>Leadership with execution depth</h3>
+                <p>
+                  I architect and ship production AI that solves operational problems end-to-end: robust
+                  pipelines, quality gates, and delivery rigor — not slide-deck experiments.
+                </p>
+                <p>
+                  I lead cross-functional engineers while staying close to model performance, platform
+                  reliability, and the tradeoffs that decide whether AI survives in the real world.
                 </p>
               </article>
-              <article class="card glass-card stat-card">
-                <p class="stat-label">Document Types</p>
-                <p class="stat-value">
-                  <span class="counter" data-target="2000" data-format="comma" data-suffix="+">0</span>
-                </p>
-              </article>
-              <article class="card glass-card stat-card">
-                <p class="stat-label">Extraction Accuracy</p>
-                <p class="stat-value">
-                  <span class="counter" data-target="99" data-suffix="%+">0</span>
-                </p>
-              </article>
-              <article class="card glass-card stat-card">
-                <p class="stat-label">Years Experience</p>
-                <p class="stat-value">
-                  <span class="counter" data-target="3" data-suffix="+">0</span>
-                </p>
-              </article>
-              <article class="card glass-card stat-card span-2">
-                <p class="stat-label">Engineers Led</p>
-                <p class="stat-value">12-20</p>
-              </article>
+              <div class="about-stats-grid reveal-stagger">
+                <article class="card glass-card stat-card">
+                  <p class="stat-label">Documents / Day</p>
+                  <p class="stat-value">
+                    <span class="counter" data-target="1000000" data-format="compact" data-suffix="+">0</span>
+                  </p>
+                </article>
+                <article class="card glass-card stat-card">
+                  <p class="stat-label">Document Types</p>
+                  <p class="stat-value">
+                    <span class="counter" data-target="2000" data-format="comma" data-suffix="+">0</span>
+                  </p>
+                </article>
+                <article class="card glass-card stat-card">
+                  <p class="stat-label">Extraction Accuracy</p>
+                  <p class="stat-value">
+                    <span class="counter" data-target="99" data-suffix="%+">0</span>
+                  </p>
+                </article>
+                <article class="card glass-card stat-card">
+                  <p class="stat-label">Years Experience</p>
+                  <p class="stat-value">
+                    <span class="counter" data-target="3" data-suffix="+">0</span>
+                  </p>
+                </article>
+                <article class="card glass-card stat-card span-2">
+                  <p class="stat-label">Engineers Led</p>
+                  <p class="stat-value">12-20</p>
+                </article>
+              </div>
             </div>
           </div>
         </div>

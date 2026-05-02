@@ -18,6 +18,33 @@ const pageLinks = document.querySelectorAll("a[data-page-link]");
 
 document.body.classList.add("page-enter");
 
+const introMerged = document.querySelector("[data-intro-merged]");
+const profileFab = document.querySelector("#profileFab");
+const heroProfileFrame = document.querySelector("#heroProfileFrame");
+
+const updateProfileDock = () => {
+  if (!profileFab) return;
+  let show = window.scrollY > Math.max(72, window.innerHeight * 0.16);
+  if (heroProfileFrame) {
+    const rect = heroProfileFrame.getBoundingClientRect();
+    if (rect.bottom < window.innerHeight * 0.44) show = true;
+  }
+  profileFab.classList.toggle("is-visible", show);
+  profileFab.toggleAttribute("inert", !show);
+  profileFab.setAttribute("aria-hidden", show ? "false" : "true");
+  profileFab.tabIndex = show ? 0 : -1;
+  if (heroProfileFrame) heroProfileFrame.classList.toggle("is-docked", show);
+};
+
+if (introMerged && profileFab) {
+  profileFab.setAttribute("aria-hidden", "true");
+  profileFab.tabIndex = -1;
+  profileFab.toggleAttribute("inert", true);
+  updateProfileDock();
+  window.addEventListener("scroll", updateProfileDock, { passive: true });
+  window.addEventListener("resize", updateProfileDock);
+}
+
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
 }

@@ -513,6 +513,15 @@ small {
 }
 
 /* Sections */
+#about,
+#contact,
+#experience,
+#skills,
+#projects,
+#achievements {
+  scroll-margin-top: calc(var(--header-height) + 0.75rem);
+}
+
 .section-heading {
   margin-bottom: var(--space-6);
 }
@@ -531,11 +540,212 @@ small {
   align-items: center;
 }
 
-.hero-grid {
+.hero-grid,
+.intro-hero-grid {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
   gap: clamp(1.5rem, 3vw, 2.4rem);
   align-items: stretch;
+}
+
+.intro-merged {
+  padding-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.intro-visual-column {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.35rem);
+  align-content: start;
+}
+
+.hero-profile-frame {
+  position: relative;
+  margin-inline: auto;
+  width: min(100%, 22rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(0, 245, 212, 0.88), rgba(255, 183, 3, 0.78));
+  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 40px rgba(0, 245, 212, 0.12);
+  transition: transform 0.55s cubic-bezier(0.34, 1.15, 0.64, 1), opacity 0.45s ease, box-shadow 0.45s ease,
+    filter 0.45s ease;
+}
+
+.hero-profile-frame.is-docked {
+  transform: scale(0.94);
+  opacity: 0.78;
+  filter: saturate(0.9);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.hero-profile-frame__halo {
+  position: absolute;
+  inset: -18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 245, 212, 0.22), transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+  animation: profileHaloPulse 5.5s ease-in-out infinite;
+}
+
+.hero-profile-frame__shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    125deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.14) 50%,
+    transparent 58%
+  );
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: soft-light;
+  animation: profileShineDrift 10s linear infinite;
+}
+
+.hero-profile-frame__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(11, 15, 20, 0.92);
+}
+
+.intro-neural-card {
+  position: relative;
+  min-height: 11.5rem;
+  overflow: hidden;
+  display: grid;
+  align-content: end;
+}
+
+.intro-neural-card #neuralCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+}
+
+.intro-neural-card .stats-list {
+  position: relative;
+  z-index: 1;
+  background: rgba(11, 15, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.intro-stats-compact li {
+  font-size: 0.82rem;
+}
+
+.intro-stats-compact strong {
+  font-size: 0.78rem;
+}
+
+.intro-hook {
+  max-width: 62ch;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.intro-about-block {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding-top: clamp(2rem, 5vw, 3.25rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.profile-fab {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right, 0px));
+  bottom: max(2.15rem, calc(1rem + env(safe-area-inset-bottom, 0px)));
+  z-index: 45;
+  width: 3.45rem;
+  height: 3.45rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0;
+  transform: scale(0.62) translateY(18px);
+  pointer-events: none;
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1), transform 0.55s cubic-bezier(0.34, 1.35, 0.64, 1),
+    box-shadow 0.35s ease;
+  box-shadow: 0 0 0 1px rgba(0, 245, 212, 0.35), 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 32px rgba(0, 245, 212, 0.18);
+}
+
+.profile-fab.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+.profile-fab:hover {
+  box-shadow: 0 0 0 1px rgba(0, 245, 212, 0.55), 0 18px 48px rgba(0, 0, 0, 0.55), 0 0 42px rgba(0, 245, 212, 0.28);
+}
+
+.profile-fab:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+.profile-fab__ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 245, 212, 0.35);
+  opacity: 0.85;
+  animation: fabRingPulse 2.8s ease-in-out infinite;
+}
+
+.profile-fab__img {
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-fab__pulse {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  z-index: 0;
+  animation: fabPulse 2.2s ease-out infinite;
+}
+
+.profile-fab__label {
+  position: absolute;
+  bottom: -0.62rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.14rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(11, 15, 20, 0.94);
+  border: 1px solid rgba(0, 245, 212, 0.38);
+  color: var(--accent-primary);
+  white-space: nowrap;
+  z-index: 2;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+@media (width <= 520px) {
+  .profile-fab__label {
+    display: none;
+  }
 }
 
 .hero-content {
@@ -648,6 +858,10 @@ small {
 
 .hero-reveal:nth-child(6) {
   animation-delay: 580ms;
+}
+
+.hero-reveal:nth-child(7) {
+  animation-delay: 680ms;
 }
 
 .actions {
@@ -1114,6 +1328,7 @@ details summary {
   }
 
   .hero-grid,
+  .intro-hero-grid,
   .cols-2,
   .cols-3,
   .skills-category-grid,
@@ -1159,6 +1374,17 @@ details summary {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+
+  .hero-profile-frame__halo,
+  .hero-profile-frame__shine,
+  .profile-fab__ring,
+  .profile-fab__pulse {
+    animation: none !important;
+  }
+
+  .profile-fab {
+    transition: none;
   }
 }
 
@@ -1226,5 +1452,53 @@ details summary {
   to {
     opacity: 0;
     transform: translateY(-5px);
+  }
+}
+
+@keyframes profileHaloPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes profileShineDrift {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fabRingPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes fabPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
   }
 }
