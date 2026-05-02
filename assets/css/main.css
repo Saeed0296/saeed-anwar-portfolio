@@ -1003,8 +1003,7 @@ details summary {
   gap: 0.55rem;
 }
 
-.contact-link-pill,
-.contact-call-pill {
+.contact-link-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
@@ -1018,21 +1017,11 @@ details summary {
     box-shadow var(--transition);
 }
 
-.contact-link-pill:hover,
-.contact-call-pill:hover {
+.contact-link-pill:hover {
   color: var(--accent-primary);
   border-color: rgba(0, 245, 212, 0.4);
   background: rgba(0, 245, 212, 0.08);
   box-shadow: 0 0 0 1px rgba(0, 245, 212, 0.12);
-}
-
-.contact-call-pill:hover .contact-call-numbers a {
-  color: var(--accent-primary);
-}
-
-.contact-call-pill:hover .contact-call-icon {
-  color: inherit;
-  opacity: 1;
 }
 
 .contact-icon {
@@ -1040,47 +1029,6 @@ details summary {
   height: 1.15rem;
   flex-shrink: 0;
   opacity: 0.92;
-}
-
-.contact-call-pill {
-  align-items: flex-start;
-  width: 100%;
-  max-width: 100%;
-}
-
-.contact-call-icon {
-  color: inherit;
-  margin-top: 0.12rem;
-  flex-shrink: 0;
-}
-
-.contact-call-numbers {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  min-width: 0;
-  flex: 1;
-}
-
-.contact-call-numbers a {
-  display: block;
-  color: inherit;
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.01em;
-  line-height: 1.35;
-  text-decoration: none;
-  transition: color var(--transition), text-shadow var(--transition);
-  border-radius: var(--radius-sm);
-  margin: -0.15rem -0.25rem;
-  padding: 0.15rem 0.25rem;
-}
-
-.contact-call-numbers a:hover,
-.contact-call-numbers a:focus-visible {
-  color: var(--accent-primary);
-  text-shadow: 0 0 12px rgba(0, 245, 212, 0.35);
-  outline: none;
 }
 
 .form-hint {
