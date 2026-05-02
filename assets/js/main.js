@@ -12,6 +12,7 @@ const projectCards = document.querySelectorAll(".project-card");
 const tiltCards = document.querySelectorAll(".tilt-card");
 const contactForm = document.querySelector("#contactForm");
 const formSuccess = document.querySelector("#formSuccess");
+const formError = document.querySelector("#formError");
 const cursorGlow = document.querySelector("#cursorGlow");
 const pageLinks = document.querySelectorAll("a[data-page-link]");
 
@@ -248,12 +249,33 @@ if (tiltCards.length > 0 && window.matchMedia("(pointer: fine)").matches) {
   });
 }
 
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/saeedanwar166167@gmail.com";
+
 if (contactForm && formSuccess) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    formSuccess.classList.add("is-visible");
-    contactForm.reset();
-    window.setTimeout(() => formSuccess.classList.remove("is-visible"), 2800);
+    formSuccess.classList.remove("is-visible");
+    if (formError) formError.classList.remove("is-visible");
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        formSuccess.classList.add("is-visible");
+        contactForm.reset();
+        window.setTimeout(() => formSuccess.classList.remove("is-visible"), 3200);
+      } else if (formError) {
+        formError.classList.add("is-visible");
+      }
+    } catch {
+      if (formError) formError.classList.add("is-visible");
+    }
   });
 }
 
