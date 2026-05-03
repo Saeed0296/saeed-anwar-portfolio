@@ -78,25 +78,6 @@
     </header>
 
     <main id="home">
-      <a
-        href="#contact"
-        class="profile-fab"
-        id="profileFab"
-        aria-label="Contact Saeed Anwar — scroll to contact form"
-      >
-        <span class="profile-fab__ring" aria-hidden="true"></span>
-        <img
-          class="profile-fab__img"
-          src="assets/images/profile_pic.jpeg"
-          alt=""
-          width="72"
-          height="72"
-          decoding="async"
-        />
-        <span class="profile-fab__pulse" aria-hidden="true"></span>
-        <span class="profile-fab__label">Contact</span>
-      </a>
-
       <section class="hero-bento section-transition" aria-label="Saeed Anwar — overview">
         <div class="hero-bento__bg" aria-hidden="true">
           <span class="hero-bento__glow hero-bento__glow--cyan"></span>
@@ -106,6 +87,20 @@
 
         <div class="container hero-bento__inner">
           <div class="hero-bento__lead">
+            <figure class="hero-profile-frame hero-reveal" id="heroProfileFrame" data-hero-profile>
+              <span class="hero-profile-frame__shine" aria-hidden="true"></span>
+              <span class="hero-profile-frame__halo" aria-hidden="true"></span>
+              <img
+                class="hero-profile-frame__img"
+                src="assets/images/profile_pic.jpeg"
+                alt="Saeed Anwar"
+                width="640"
+                height="640"
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
+
             <div class="hero-bento__copy">
               <p class="eyebrow hero-reveal">AI/ML Leadership Portfolio</p>
               <h1 class="hero-reveal">
@@ -127,20 +122,6 @@
                 <a class="btn btn-secondary" href="#contact">Contact Me</a>
               </div>
             </div>
-
-            <figure class="hero-profile-frame hero-reveal" id="heroProfileFrame" data-hero-profile>
-              <span class="hero-profile-frame__shine" aria-hidden="true"></span>
-              <span class="hero-profile-frame__halo" aria-hidden="true"></span>
-              <img
-                class="hero-profile-frame__img"
-                src="assets/images/profile_pic.jpeg"
-                alt="Saeed Anwar"
-                width="640"
-                height="640"
-                loading="eager"
-                decoding="async"
-              />
-            </figure>
           </div>
 
           <ul class="hero-bento__stats reveal" aria-label="Impact metrics">
@@ -606,6 +587,25 @@
         <a class="btn btn-ghost btn-sm" href="#home" aria-label="Back to top">↑ Back to top</a>
       </div>
     </footer>
+
+    <a
+      href="#contact"
+      class="profile-fab"
+      id="profileFab"
+      aria-label="Contact Saeed Anwar — scroll to contact form"
+    >
+      <span class="profile-fab__ring" aria-hidden="true"></span>
+      <span class="profile-fab__pulse" aria-hidden="true"></span>
+      <img
+        class="profile-fab__img"
+        src="assets/images/profile_pic.jpeg"
+        alt=""
+        width="72"
+        height="72"
+        decoding="async"
+      />
+      <span class="profile-fab__label">Contact Me</span>
+    </a>
 
     <script src="assets/js/main.js"></script>
   </body>
