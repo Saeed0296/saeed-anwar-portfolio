@@ -47,7 +47,6 @@
         </a>
         <nav class="site-nav" aria-label="Primary Navigation">
           <a href="#home">Home</a>
-          <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
@@ -68,7 +67,6 @@
       </div>
       <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -98,118 +96,100 @@
         <span class="profile-fab__label">Contact</span>
       </a>
 
-      <div class="home-content">
-        <div class="container home-unified">
-          <div class="intro-hero-grid full-hero home-hero">
-            <div class="hero-content intro-copy">
+      <section class="hero-bento section-transition" aria-label="Saeed Anwar — overview">
+        <div class="hero-bento__bg" aria-hidden="true">
+          <span class="hero-bento__glow hero-bento__glow--cyan"></span>
+          <span class="hero-bento__glow hero-bento__glow--amber"></span>
+          <span class="hero-bento__grid"></span>
+        </div>
+
+        <div class="container hero-bento__inner">
+          <div class="hero-bento__lead">
+            <div class="hero-bento__copy">
               <p class="eyebrow hero-reveal">AI/ML Leadership Portfolio</p>
-              <h1 class="hero-reveal">Saeed Anwar</h1>
+              <h1 class="hero-reveal">
+                Saeed <span class="hero-bento__name-accent">Anwar</span>
+              </h1>
               <h2 class="hero-title hero-reveal">
-                AI/ML Lead | Generative AI Engineer | Computer Vision Specialist
+                AI/ML Lead · Generative AI Engineer · Computer Vision Specialist
               </h2>
               <p class="lead hero-reveal">
                 <span id="typedTagline" data-text="Architecting production-grade AI systems at scale."></span>
               </p>
-              <p class="hero-reveal intro-hook">
-                Production OCR, computer vision, and LLM pipelines at enterprise scale — from architecture
-                to CI/CD, with leadership that stays hands-on where it matters.
+              <p class="hero-reveal hero-bento__hook">
+                I architect and ship production OCR, Computer Vision, and LLM pipelines —
+                end-to-end, with engineering rigor and team leadership that scales from prototype
+                to enterprise reliability.
               </p>
               <div class="actions hero-reveal">
                 <a class="btn btn-primary" href="#projects">View Projects</a>
                 <a class="btn btn-secondary" href="#contact">Contact Me</a>
               </div>
-              <a class="scroll-indicator hero-reveal" href="#about" aria-label="Scroll to impact metrics and story">
-                <span>Scroll</span>
-                <i></i>
-              </a>
             </div>
-            <aside class="hero-showcase card glass-card hero-reveal" aria-label="Profile and live signal">
-              <div class="hero-showcase__portrait">
-                <figure class="hero-profile-frame" id="heroProfileFrame" data-hero-profile>
-                  <span class="hero-profile-frame__shine" aria-hidden="true"></span>
-                  <span class="hero-profile-frame__halo" aria-hidden="true"></span>
-                  <img
-                    class="hero-profile-frame__img"
-                    src="assets/images/profile_pic.jpeg"
-                    alt="Saeed Anwar"
-                    width="640"
-                    height="640"
-                    loading="eager"
-                    decoding="async"
-                  />
-                </figure>
+
+            <aside class="hero-bento__portrait hero-reveal" aria-label="Saeed Anwar portrait">
+              <figure class="hero-profile-frame" id="heroProfileFrame" data-hero-profile>
+                <span class="hero-profile-frame__shine" aria-hidden="true"></span>
+                <span class="hero-profile-frame__halo" aria-hidden="true"></span>
+                <img
+                  class="hero-profile-frame__img"
+                  src="assets/images/profile_pic.jpeg"
+                  alt="Saeed Anwar"
+                  width="640"
+                  height="640"
+                  loading="eager"
+                  decoding="async"
+                />
+              </figure>
+              <div class="hero-bento__viz" aria-hidden="true">
+                <canvas id="neuralCanvas"></canvas>
               </div>
-              <div class="hero-showcase__viz">
-                <canvas id="neuralCanvas" aria-label="Animated neural network visual"></canvas>
-              </div>
-              <ul class="hero-showcase__metrics">
-                <li>
-                  <span>Throughput</span><strong>1M+ docs/day</strong>
-                </li>
-                <li>
-                  <span>Coverage</span><strong>2,000+ types</strong>
-                </li>
-                <li>
-                  <span>Accuracy</span><strong>99%+</strong>
-                </li>
-                <li>
-                  <span>Teams</span><strong>12–20</strong>
-                </li>
-              </ul>
+              <p class="hero-bento__caption">Production AI · Live signal</p>
             </aside>
           </div>
 
-          <div id="about" class="home-unified__about reveal">
-            <div class="section-heading reveal-stagger">
-              <p class="eyebrow">Impact &amp; depth</p>
-              <h2>Measurable delivery in document AI, vision, and generative systems.</h2>
-            </div>
-            <div class="grid cols-2 gap-lg about-layout">
-              <article class="card glass-card about-story reveal-stagger">
-                <h3>Leadership with execution depth</h3>
-                <p>
-                  I architect and ship production AI that solves operational problems end-to-end: robust
-                  pipelines, quality gates, and delivery rigor — not slide-deck experiments.
-                </p>
-                <p>
-                  I lead cross-functional engineers while staying close to model performance, platform
-                  reliability, and the tradeoffs that decide whether AI survives in the real world.
-                </p>
-              </article>
-              <div class="about-stats-grid reveal-stagger">
-                <article class="card glass-card stat-card">
-                  <p class="stat-label">Documents / Day</p>
-                  <p class="stat-value">
-                    <span class="counter" data-target="1000000" data-format="compact" data-suffix="+">0</span>
-                  </p>
-                </article>
-                <article class="card glass-card stat-card">
-                  <p class="stat-label">Document Types</p>
-                  <p class="stat-value">
-                    <span class="counter" data-target="2000" data-format="comma" data-suffix="+">0</span>
-                  </p>
-                </article>
-                <article class="card glass-card stat-card">
-                  <p class="stat-label">Extraction Accuracy</p>
-                  <p class="stat-value">
-                    <span class="counter" data-target="99" data-suffix="%+">0</span>
-                  </p>
-                </article>
-                <article class="card glass-card stat-card">
-                  <p class="stat-label">Years Experience</p>
-                  <p class="stat-value">
-                    <span class="counter" data-target="3" data-suffix="+">0</span>
-                  </p>
-                </article>
-                <article class="card glass-card stat-card span-2">
-                  <p class="stat-label">Engineers Led</p>
-                  <p class="stat-value">12-20</p>
-                </article>
-              </div>
-            </div>
-          </div>
+          <ul class="hero-bento__stats reveal" aria-label="Impact metrics">
+            <li class="reveal-stagger">
+              <p class="stat-label">Documents / Day</p>
+              <p class="stat-value">
+                <span class="counter" data-target="1000000" data-format="compact" data-suffix="+">0</span>
+              </p>
+            </li>
+            <li class="reveal-stagger">
+              <p class="stat-label">Document Types</p>
+              <p class="stat-value">
+                <span class="counter" data-target="2000" data-format="comma" data-suffix="+">0</span>
+              </p>
+            </li>
+            <li class="reveal-stagger">
+              <p class="stat-label">Accuracy</p>
+              <p class="stat-value">
+                <span class="counter" data-target="99" data-suffix="%+">0</span>
+              </p>
+            </li>
+            <li class="reveal-stagger">
+              <p class="stat-label">Years</p>
+              <p class="stat-value">
+                <span class="counter" data-target="3" data-suffix="+">0</span>
+              </p>
+            </li>
+            <li class="reveal-stagger">
+              <p class="stat-label">Engineers Led</p>
+              <p class="stat-value">12-20</p>
+            </li>
+          </ul>
+
+          <article class="hero-bento__story reveal" aria-label="About Saeed Anwar">
+            <p class="eyebrow reveal-stagger">Leadership with execution depth</p>
+            <p class="reveal-stagger">
+              Production AI that solves operational problems end-to-end —
+              robust pipelines, quality gates, and delivery rigor, not slide-deck experiments.
+              I lead cross-functional engineers while staying close to model performance,
+              platform reliability, and the tradeoffs that decide whether AI survives in the real world.
+            </p>
+          </article>
         </div>
-      </div>
+      </section>
 
       <section id="experience" class="section-wrap section-transition">
         <div class="container reveal">
