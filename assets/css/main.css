@@ -619,9 +619,12 @@ small {
   grid-template-columns: auto minmax(0, 1fr);
   gap: clamp(1.75rem, 5vw, 3.5rem);
   align-items: center;
+  width: 100%;
 }
 
 .hero-profile-frame {
+  --cursor-x: 50%;
+  --cursor-y: 50%;
   position: relative;
   display: block;
   border-radius: 50%;
@@ -638,6 +641,36 @@ small {
     0 0 0 1px rgba(0, 245, 212, 0.18);
   isolation: isolate;
   overflow: visible;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-profile-frame::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at var(--cursor-x) var(--cursor-y),
+    rgba(0, 245, 212, 0.55),
+    rgba(0, 245, 212, 0) 55%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: screen;
+}
+
+.hero-profile-frame:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 28px 70px -20px rgba(0, 245, 212, 0.7),
+    0 0 0 1px rgba(0, 245, 212, 0.35),
+    0 0 60px rgba(0, 245, 212, 0.25);
+}
+
+.hero-profile-frame:hover::after {
+  opacity: 1;
 }
 
 .hero-bento__lead .hero-profile-frame {
@@ -661,12 +694,13 @@ small {
 .hero-bento__copy {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  max-width: 38rem;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: none;
 }
 
 .hero-bento__copy h1 {
-  font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
   margin-bottom: 0;
   line-height: 1.05;
 }
@@ -683,85 +717,18 @@ small {
   margin-bottom: 0.4rem;
 }
 
+.hero-bento__copy .lead {
+  margin-bottom: 0.2rem;
+}
+
 .hero-bento__hook {
-  max-width: 42ch;
+  max-width: 70ch;
   color: var(--text-muted);
   margin-bottom: 0.4rem;
 }
 
 .hero-bento__copy .actions {
-  margin-top: 0.8rem;
-}
-
-.hero-bento__stats {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(0.6rem, 1.4vw, 1rem);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.hero-bento__stats li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 0.3rem;
-  padding: clamp(0.85rem, 2vw, 1.15rem) 0.6rem;
-  border-radius: var(--radius-md);
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
-  border: 1px solid var(--border-subtle);
-  backdrop-filter: blur(10px);
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-}
-
-.hero-bento__stats li:hover {
-  transform: translateY(-3px);
-  border-color: rgba(0, 245, 212, 0.36);
-  box-shadow: 0 0 0 1px rgba(0, 245, 212, 0.2), 0 0 28px rgba(0, 245, 212, 0.16);
-}
-
-.hero-bento__stats .stat-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  margin-bottom: 0;
-}
-
-.hero-bento__stats .stat-value {
-  font-size: clamp(1.05rem, 2.4vw, 1.55rem);
-  margin-bottom: 0;
-}
-
-.hero-bento__story {
-  padding: clamp(1rem, 2.4vw, 1.4rem) clamp(1.1rem, 2.6vw, 1.6rem);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.008));
-  border: 1px solid var(--border-subtle);
-  backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bento__story::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(var(--accent-primary), var(--accent-secondary));
-  opacity: 0.85;
-}
-
-.hero-bento__story .eyebrow {
-  margin-bottom: 0.55rem;
-}
-
-.hero-bento__story p:not(.eyebrow) {
-  margin-bottom: 0;
-  max-width: 80ch;
+  margin-top: 1rem;
 }
 
 .hero-profile-frame__halo {
@@ -1879,10 +1846,6 @@ details summary {
     justify-self: center;
   }
 
-  .hero-bento__stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .about-stats-grid {
     grid-template-columns: 1fr;
   }
@@ -1931,14 +1894,6 @@ details summary {
 
   .timeline-dot {
     left: -1.17rem;
-  }
-
-  .hero-bento__stats {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .hero-bento__stats li:last-child {
-    grid-column: span 2;
   }
 
   .site-footer__grid {

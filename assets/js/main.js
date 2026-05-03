@@ -101,6 +101,21 @@ if (cursorGlow && window.matchMedia("(pointer: fine)").matches) {
   });
 }
 
+const heroProfileFrame = document.querySelector("#heroProfileFrame");
+if (heroProfileFrame && window.matchMedia("(pointer: fine)").matches) {
+  heroProfileFrame.addEventListener("pointermove", (event) => {
+    const rect = heroProfileFrame.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    heroProfileFrame.style.setProperty("--cursor-x", `${x}%`);
+    heroProfileFrame.style.setProperty("--cursor-y", `${y}%`);
+  });
+  heroProfileFrame.addEventListener("pointerleave", () => {
+    heroProfileFrame.style.setProperty("--cursor-x", "50%");
+    heroProfileFrame.style.setProperty("--cursor-y", "50%");
+  });
+}
+
 if (typedTagline) {
   const text = typedTagline.getAttribute("data-text") || "";
   let index = 0;
