@@ -571,6 +571,26 @@ small {
   padding-bottom: clamp(2.5rem, 6vw, 4rem);
 }
 
+.home-unified {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 3.25rem);
+}
+
+.home-unified__about {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.home-unified__about .section-heading {
+  margin-bottom: var(--space-5);
+}
+
+.home-unified__about .section-heading h2 {
+  max-width: 32ch;
+}
+
 .intro-copy {
   max-width: 38rem;
   margin-inline: 0;
@@ -714,12 +734,6 @@ small {
   max-width: 38rem;
   color: var(--text-muted);
   margin-bottom: var(--space-4);
-}
-
-.intro-about-block {
-  margin-top: clamp(2.5rem, 6vw, 4rem);
-  padding-top: clamp(2rem, 5vw, 3.25rem);
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .profile-fab {
