@@ -31,6 +31,7 @@
   <body>
     <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
     <div class="bg-noise" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
     <header class="site-header">
       <div class="container flex items-center justify-between">
@@ -569,10 +570,46 @@
       </section>
     </main>
 
-    <footer class="site-footer section-wrap">
-      <div class="container flex items-center justify-between">
+    <footer class="site-footer">
+      <div class="container site-footer__grid">
+        <div class="site-footer__brand">
+          <a class="brand brand--footer" href="#home" aria-label="Saeed Anwar — back to top">
+            <span class="brand-avatar-wrap">
+              <img src="assets/images/logo_img.jpeg" alt="" class="brand-avatar" loading="lazy" />
+            </span>
+            <span class="brand-name">Saeed Anwar</span>
+          </a>
+          <p class="site-footer__tagline">
+            AI/ML Lead building production OCR, Computer Vision, and LLM systems.
+          </p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Footer navigation">
+          <p class="site-footer__heading">Explore</p>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="resume.html" data-page-link>Resume</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-footer__contact">
+          <p class="site-footer__heading">Reach me</p>
+          <ul>
+            <li><a href="mailto:saeedanwar166167@gmail.com">saeedanwar166167@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/saeed2000" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/Saeed0296" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="tel:+923029166167">+92-302-9166167</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container site-footer__row">
         <small>© <span id="year"></span> Saeed Anwar. All rights reserved.</small>
-        <a class="btn btn-ghost btn-sm" href="#home" aria-label="Back to top">Back to top</a>
+        <a class="btn btn-ghost btn-sm" href="#home" aria-label="Back to top">↑ Back to top</a>
       </div>
     </footer>
 

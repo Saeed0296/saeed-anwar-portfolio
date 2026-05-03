@@ -15,8 +15,62 @@ const formSuccess = document.querySelector("#formSuccess");
 const formError = document.querySelector("#formError");
 const cursorGlow = document.querySelector("#cursorGlow");
 const pageLinks = document.querySelectorAll("a[data-page-link]");
+const scrollProgress = document.querySelector("#scrollProgress");
 
 document.body.classList.add("page-enter");
+
+if (scrollProgress) {
+  let ticking = false;
+  const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+    scrollProgress.style.width = `${progress * 100}%`;
+    ticking = false;
+  };
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+  updateProgress();
+}
+
+const sectionTargets = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".site-nav a[href^='#'], .mobile-menu a[href^='#']");
+if (sectionTargets.length > 0 && navLinks.length > 0) {
+  const linkMap = new Map();
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || !href.startsWith("#")) return;
+    const id = href.slice(1);
+    if (!linkMap.has(id)) linkMap.set(id, []);
+    linkMap.get(id).push(link);
+  });
+
+  const setActive = (id) => {
+    navLinks.forEach((link) => link.classList.remove("is-active"));
+    if (id && linkMap.has(id)) {
+      linkMap.get(id).forEach((link) => link.classList.add("is-active"));
+    }
+  };
+
+  const spyObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (visible[0]) setActive(visible[0].target.id);
+    },
+    { rootMargin: "-40% 0px -50% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+  );
+  sectionTargets.forEach((section) => spyObserver.observe(section));
+}
 
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());

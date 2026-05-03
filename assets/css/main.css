@@ -4,8 +4,9 @@
   --bg-elev-2: #152231;
   --accent-primary: #00f5d4;
   --accent-secondary: #ffb703;
-  --text-strong: #e8f1ff;
-  --text-muted: #a9b5c3;
+  --text-strong: #eef4ff;
+  --text-muted: #b8c4d3;
+  --text-soft: #d6dee9;
   --border-subtle: rgba(255, 255, 255, 0.14);
   --card-glass: rgba(16, 24, 33, 0.62);
 
@@ -112,9 +113,14 @@ body {
   color: var(--text-strong);
   font-family: var(--font-body);
   font-size: var(--step-0);
-  line-height: 1.65;
+  line-height: 1.7;
   position: relative;
   padding-top: var(--header-height);
+}
+
+p,
+li {
+  line-height: 1.7;
 }
 
 @media (pointer: fine) {
@@ -1462,9 +1468,324 @@ details summary {
   animation: pageOut 260ms ease both;
 }
 
+/* Scroll progress bar (Tip 4: navigation aid) */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  z-index: 60;
+  pointer-events: none;
+  box-shadow: 0 0 18px rgba(0, 245, 212, 0.45);
+  transition: width 0.12s ease-out;
+}
+
+/* Active section indicator in nav (Tip 4: easy navigation) */
+.site-nav a.is-active::after,
+.mobile-menu a.is-active::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin-top: 0.25rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  box-shadow: 0 0 10px rgba(0, 245, 212, 0.55);
+}
+
+.site-nav a.is-active,
+.mobile-menu a.is-active {
+  color: var(--accent-primary);
+}
+
+/* Larger CTA size (Tip 5: bigger tap targets) */
+.btn-lg {
+  padding: 0.95rem 1.5rem;
+  font-size: 1rem;
+  min-height: 3rem;
+}
+
+/* Footer redesign (Tip 4: navigation + Tip 1: clarity) */
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: var(--space-6);
+  padding-block: clamp(2.5rem, 5vw, 3.5rem) 1.25rem;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.015), transparent 60%);
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
+}
+
+.brand--footer {
+  margin-bottom: 0.75rem;
+}
+
+.site-footer__tagline {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  max-width: 32ch;
+  margin: 0;
+}
+
+.site-footer__heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.site-footer__nav ul,
+.site-footer__contact ul {
+  display: grid;
+  gap: 0.55rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer__nav a,
+.site-footer__contact a {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  transition: color var(--transition);
+  display: inline-block;
+  padding: 0.15rem 0;
+}
+
+.site-footer__nav a:hover,
+.site-footer__contact a:hover {
+  color: var(--accent-primary);
+}
+
+.site-footer__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.25rem;
+}
+
+.site-footer__row small {
+  color: var(--text-muted);
+}
+
+/* Resume page (mobile-first, no auto-redirect) */
+.resume-page {
+  min-height: 100vh;
+  padding-top: clamp(1rem, 4vw, 2.25rem);
+}
+
+.resume-grid {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.resume-header {
+  text-align: center;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+}
+
+.resume-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.25rem;
+}
+
+.resume-header__role {
+  color: var(--text-soft);
+  max-width: 50ch;
+  margin: 0 auto 0.75rem;
+}
+
+.resume-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.resume-actions .btn svg {
+  flex-shrink: 0;
+}
+
+.resume-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.8vw, 1.1rem);
+}
+
+.resume-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
+  padding: clamp(1rem, 2.4vw, 1.4rem) 0.75rem;
+}
+
+.resume-card__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.resume-card__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text-strong);
+  margin: 0;
+  line-height: 1.05;
+}
+
+.resume-card--gradient .resume-card__value {
+  background: linear-gradient(120deg, var(--accent-primary), var(--accent-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.resume-card__sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.resume-snapshot__card {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.resume-snapshot__list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.4rem 0 0;
+}
+
+.resume-snapshot__list li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-soft);
+}
+
+.resume-snapshot__list li:last-child {
+  border-bottom: none;
+}
+
+.resume-snapshot__list strong {
+  font-family: var(--font-display);
+  color: var(--accent-primary);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.resume-snapshot__contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.92rem;
+}
+
+.resume-snapshot__contact a {
+  color: var(--accent-primary);
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.resume-snapshot__contact a:hover {
+  color: #8fefdf;
+}
+
+.resume-snapshot__contact span {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.resume-preview__head {
+  margin-bottom: 1rem;
+}
+
+.resume-preview__hint {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin: 0.4rem 0 0;
+}
+
+.resume-preview__viewer {
+  position: relative;
+}
+
+.pdf-viewer {
+  width: 100%;
+  min-height: 78vh;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  background: rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+.pdf-mobile-card {
+  display: none;
+  text-align: center;
+  padding: clamp(1.5rem, 4vw, 2rem);
+}
+
+.pdf-mobile-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(0, 245, 212, 0.18), rgba(0, 245, 212, 0.04));
+  color: var(--accent-primary);
+  margin: 0 auto 1rem;
+  border: 1px solid rgba(0, 245, 212, 0.3);
+}
+
+.pdf-mobile-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.pdf-mobile-card p {
+  color: var(--text-muted);
+  max-width: 42ch;
+  margin: 0 auto 1.25rem;
+}
+
+.pdf-mobile-card .resume-actions {
+  margin-top: 0;
+}
+
+@media (width <= 900px) {
+  .pdf-viewer {
+    display: none;
+  }
+
+  .pdf-mobile-card {
+    display: block;
+  }
 }
 
 /* Responsive */
@@ -1530,6 +1851,34 @@ details summary {
   .span-2 {
     grid-column: auto;
   }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .resume-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .resume-snapshot__list li {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  /* Bigger tap targets on touch screens (Tip 5) */
+  .btn {
+    min-height: 2.75rem;
+    padding: 0.78rem 1.3rem;
+  }
+
+  .site-nav a,
+  .mobile-menu a {
+    padding: 0.55rem 0.5rem;
+  }
 }
 
 @media (width <= 640px) {
@@ -1551,6 +1900,29 @@ details summary {
 
   .hero-bento__stats li:last-child {
     grid-column: span 2;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__brand {
+    grid-column: auto;
+  }
+
+  .resume-highlights {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resume-actions .btn {
+    flex: 1 1 auto;
+    min-width: 9rem;
+  }
+
+  /* Increase mobile menu link spacing for thumb-reach (Tip 5) */
+  .mobile-menu a {
+    padding: 0.85rem 0.4rem;
+    font-size: 1rem;
   }
 }
 
