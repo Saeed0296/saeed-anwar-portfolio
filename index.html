@@ -26,7 +26,19 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon-round.svg?v=4" />
     <link rel="alternate icon" type="image/jpeg" href="assets/images/logo_img.jpeg" />
     <link rel="apple-touch-icon" href="assets/images/logo_img.jpeg" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css?v=6" />
+    <style>
+      /* Failsafe: guarantee FAB always pins to viewport bottom-right */
+      a.profile-fab,
+      a#profileFab {
+        position: fixed !important;
+        right: 1.25rem !important;
+        bottom: 1.5rem !important;
+        top: auto !important;
+        left: auto !important;
+        z-index: 9999 !important;
+      }
+    </style>
   </head>
   <body>
     <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>

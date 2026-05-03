@@ -16,8 +16,17 @@ const formError = document.querySelector("#formError");
 const cursorGlow = document.querySelector("#cursorGlow");
 const pageLinks = document.querySelectorAll("a[data-page-link]");
 const scrollProgress = document.querySelector("#scrollProgress");
+const profileFab = document.querySelector("#profileFab");
 
 document.body.classList.add("page-enter");
+
+// Failsafe: re-parent the FAB to <body> and force inline fixed styles.
+// Inline styles win the cascade against any cached/conflicting CSS, and
+// being a direct body child guarantees no ancestor (transform/filter/etc.)
+// can break position:fixed.
+if (profileFab && profileFab.parentElement !== document.body) {
+  document.body.appendChild(profileFab);
+}
 
 if (scrollProgress) {
   let ticking = false;
